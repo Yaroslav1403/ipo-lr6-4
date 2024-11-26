@@ -15,19 +15,21 @@ counter = 0
 search_string = input("Введите строку: ")
 
 #Открываем файл с именем text.txt
-with open("text.txt", 'r', encoding='utf-8') as file:
+with open("text.txt", 'r', encoding = 'utf-8') as file:
     
     #Используем цикл for, который пройдётся по каждой строке в файле
     for line in file:
         
         #Проверяем, содержится ли search_string в файле
         if search_string in line:  
+            #Строка добавляется в список search_strings
             search_strings.append(line)  
-            #Если подстрока найдена, то она добавляется в список search_strings и счётчик увеличивается на 1
+            #Счётчик увеличивается на 1
             counter += 1
 
 #Проверяем, были ли найдены строки
 if counter == 0:
+    #Если строки не найдены, то программа выводит: "Строка не найдена"
     print("Строка не найдена")
 else:
     #Выводится найденное количество строк
